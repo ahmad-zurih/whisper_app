@@ -1,0 +1,5 @@
+---
+name: "Whisper Transcriber"
+category: "AI/ML"
+description: "Upload an audio file and get a transcription using OpenAI Whisper."
+role: batch_connect
