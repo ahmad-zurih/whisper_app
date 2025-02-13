@@ -1,0 +1,19 @@
+---
+batch_connect:
+  template: "basic"
+
+
+script:
+  job_name: "whisper_transcriber"
+
+  time: "02:00:00"
+
+  output_file: "whisper_output_%j.log"
+  error_file:  "whisper_error_%j.log"
+
+  # slurm options
+  native:
+    - "--partition=gpu"
+    - "--gres=gpu:rtx3090:1"
+    - "--mem-per-cpu=8G"
+    - "--cpus-per-task=4"
