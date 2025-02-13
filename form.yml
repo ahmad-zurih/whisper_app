@@ -9,10 +9,10 @@ form:
 
 attributes:
   audio_file:
-    widget: "file_field"
-    label: "Audio File"
+    widget: "text_field"
+    label: "Audio File path"
     required: true
-    help: "Upload your audio file here"
+    help: "write the path to your audio file"
 
   task:
     widget: "select"
