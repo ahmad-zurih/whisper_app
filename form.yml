@@ -1,0 +1,42 @@
+---
+cluster: "ubelix"
+
+form:
+  - audio_file
+  - task
+  - language
+  - model
+
+attributes:
+  audio_file:
+    widget: "file_field"
+    label: "Audio File"
+    required: true
+    help: "Upload your audio file here"
+
+  task:
+    widget: "select"
+    label: "Task Type"
+    options:
+      - ["Transcribe", "transcribe"]
+      - ["Translate", "translate"]
+    value: "transcribe"
+    help: "Select 'transcribe' to convert speech to text, or 'translate' to English."
+
+  language:
+    widget: "text_field"
+    label: "Language Code"
+    value: "de"
+    help: "Enter language code (e.g., en, de, fr)."
+
+  model:
+    widget: "select"
+    label: "Model Size"
+    options:
+      - ["Large-v3 (default)", "large-v3"]
+      - ["Medium", "medium"]
+      - ["Small", "small"]
+      - ["Tiny", "tiny"]
+    value: "large-v3"
+    help: "Choose the Whisper model size."
+
