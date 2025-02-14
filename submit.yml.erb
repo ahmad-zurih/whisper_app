@@ -10,6 +10,12 @@ script:
 
   output_file: "whisper_output_%j.log"
   error_file:  "whisper_error_%j.log"
+  
+  job_environment:
+    AUDIO_FILE: "<%= audio_file %>"
+    TASK_MODE: "<%= task %>"
+    LANGUAGE_MODE: "<%= language %>"
+    MODEL_MODE: "<%= model %>"
 
   # slurm options
   native:
