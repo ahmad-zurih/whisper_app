@@ -9,5 +9,5 @@ MODEL_MODE="<%= context.model %>"
 SCRIPT_DIR="/storage/research/dsl_shared/solutions/whisper/scripts"
 
 echo "Running Whisper container..."
-"$SCRIPT_DIR/transcribe.sh" "$AUDIO_FILE" -t "$TASK_MODE" -l "$LANGUAGE_MODE" -m "$MODEL_MODE"
+"$SCRIPT_DIR/transcribe_ondemand.sh" "$AUDIO_FILE" -t "$TASK_MODE" -l "$LANGUAGE_MODE" -m "$MODEL_MODE"
 
