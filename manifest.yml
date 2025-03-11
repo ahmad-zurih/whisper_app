@@ -1,5 +1,5 @@
 ---
 name: "DSL Whisper Transcriber"
-category: "AI/ML"
+category: "Data Science Lab Services"
 description: "Upload an audio file and get a transcription using Whisper model. \n The service is provided by DSL and partly funded by DigiK"
 role: batch_connect
