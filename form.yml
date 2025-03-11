@@ -6,13 +6,17 @@ form:
   - task
   - language
   - model
+  - show_advanced
+  - partition
+  - qos
+  - gpu
 
 attributes:
   audio_file:
     widget: "text_field"
-    label: "Audio File path"
+    label: "Audio File Path"
     required: true
-    help: "write the path to your audio file. Accepted formats (m4a, mp3, webm, mp4, mpga, wav, mpeg)"
+    help: "Enter the path to your audio file."
 
   task:
     widget: "select"
@@ -21,13 +25,11 @@ attributes:
       - ["Transcribe", "transcribe"]
       - ["Translate", "translate"]
     value: "transcribe"
-    help: "Select 'transcribe' to convert speech to text, or 'translate' to English."
 
   language:
     widget: "text_field"
     label: "Language Code"
     value: "de"
-    help: "Enter language code (e.g., en, de, fr)."
 
   model:
     widget: "select"
@@ -38,5 +40,34 @@ attributes:
       - ["Small", "small"]
       - ["Tiny", "tiny"]
     value: "large-v3"
-    help: "Choose the Whisper model size."
 
+  show_advanced:
+    widget: "check_box"
+    label: "Show Advanced SLURM Options"
+    value: false
+
+  partition:
+    widget: "select"
+    label: "SLURM Partition"
+    options:
+      - ["gpu", "gpu"]
+      - ["gpu-invest", "gpu-invest"]
+    value: "gpu"
+
+  qos:
+    widget: "select"
+    label: "Quality of Service (QoS)"
+    options:
+      - ["job_gpu", "job_gpu"]
+      - ["job_gpu_preemptable", "job_gpu_preemptable"]
+    value: "job_gpu"
+
+  gpu:
+    widget: "select"
+    label: "GPU Type"
+    options:
+      - ["rtx4090", "gpu:rtx4090:1"]
+      - ["A100", "gpu:a100:1"]
+      - ["H100", "gpu:h100:1"]
+    value: "rtx4090"
+    help: "Use A100 or H100 with 'job_gpu_preemptable' option from the 'qos'"

@@ -8,7 +8,6 @@ batch_connect:
 script:
   job_name: "whisper_transcriber"
 
-  time: "02:00:00"
 
   output_file: "whisper_output_%j.log"
   error_file:  "whisper_error_%j.log"
@@ -21,7 +20,8 @@ script:
 
   # slurm options
   native:
-    - "--partition=gpu"
-    - "--gres=gpu:rtx4090:1"
+    - "--partition=<%= partition %>"
+    - "--qos=<%= qos %>"
+    - "--gres=<%= gpu %>"
     - "--mem-per-cpu=8G"
     - "--cpus-per-task=4"
